@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textSize="24sp"
+    android:background="@drawable/poli9"
+    tools:context="com.example.yujra.modulospoliciales.distritos">
+
+
+    <Button
+        android:id="@+id/btdis3"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:textSize="24sp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Distrito 3"
+   />
+
+    <Button
+        android:id="@+id/btdis4"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colorPrimary"
+        android:textSize="24sp"
+        android:text="Distrito 4" />
+
+    <Button
+        android:id="@+id/btdis12"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Distrito 12"
+        android:textSize="24sp"
+        android:background="@color/colorPrimaryDark"
+        />
+</LinearLayout>
