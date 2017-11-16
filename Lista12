@@ -1,0 +1,79 @@
+package com.example.yujra.modulospoliciales;
+
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.net.URLEncoder;
+import java.util.ArrayList;
+
+public class Lista12 extends AppCompatActivity {
+
+    private RecyclerView modulosRecyclerView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lista12);
+
+
+        modulosRecyclerView = (RecyclerView) findViewById(R.id.moduRecyclerView);
+        modulosRecyclerView.setHasFixedSize(true);
+        modulosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        ArrayList<Modulo> datos = new ArrayList<>();
+
+        Modulo m1 = new Modulo("Modulo: San Martin", "Plaza 24 de Junio entre las calles Enrique Finot y Ricardo Bustamante", "800142045");
+        datos.add(m1);
+
+
+        ModuloAdapter adaptador = new ModuloAdapter();
+        adaptador.colocarDatos(datos);
+
+
+        modulosRecyclerView.setAdapter(adaptador);
+
+        modulosRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, modulosRecyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+
+
+                        String telephone = ((TextView) modulosRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.telefonoTextView)).getText().toString();
+                        Toast.makeText(getApplicationContext(), telephone, Toast.LENGTH_SHORT).show();
+
+
+                        PackageManager packageManager = Lista12.this.getPackageManager();
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+
+                        try {
+                            String url = "https://api.whatsapp.com/send?phone="+ "+591 "+telephone +"&text=" + URLEncoder.encode("hola hola si si", "UTF-8");
+                            i.setPackage("com.whatsapp");
+                            i.setData(Uri.parse(url));
+                            if (i.resolveActivity(packageManager) != null) {
+                                Lista12.this.startActivity(i);
+                            }
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+
+
+                    }
+
+                    //presionar momento prlongado..
+                    @Override public void onLongItemClick(View view, int position) {
+
+                    }
+
+
+
+                })
+        );
+    }
+}
