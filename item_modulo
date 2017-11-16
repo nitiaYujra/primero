@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    tools:context="com.example.yujra.modulospoliciales.Modulo"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/nombreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textColor="@color/negro"
+        tools:text="Villa Alemania" />
+
+    <TextView
+        android:id="@+id/direccionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/negro"
+        tools:text="Zona Villa Alemania entre calles 11 y 12" />
+
+    <TextView
+        android:id="@+id/telefonoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="800142012" />
+
+
+
+
+</LinearLayout>
