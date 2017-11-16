@@ -1,0 +1,60 @@
+package com.example.yujra.modulospoliciales;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+public class ModuloAdapter extends RecyclerView.Adapter<ModuloAdapter.ViewHolder> {
+
+    private ArrayList<Modulo> datos;
+
+    public  ModuloAdapter(){ datos = new ArrayList<Modulo>();}
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_modulo, parent, false);
+        return new ViewHolder(view);
+    }
+
+
+    @Override
+    public void onBindViewHolder(ModuloAdapter.ViewHolder holder, int position) {
+
+        Modulo m = datos.get(position);
+
+        holder.nombreTextView.setText(m.getNombre());
+        holder.direccionTextView.setText(m.getDireccion());
+        holder.telefonoTextView.setText(m.getTelefono());
+    }
+
+    public void colocarDatos(ArrayList<Modulo> datos) {
+        this.datos = datos;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemCount() {
+        return datos.size();
+    }
+
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView nombreTextView;
+        TextView direccionTextView;
+        TextView telefonoTextView;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            nombreTextView = (TextView) itemView.findViewById(R.id.nombreTextView);
+            direccionTextView = (TextView) itemView.findViewById(R.id.direccionTextView);
+            telefonoTextView = (TextView) itemView.findViewById(R.id.telefonoTextView);
+        }
+    }
+}
