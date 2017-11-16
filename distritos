@@ -1,0 +1,61 @@
+package com.example.yujra.modulospoliciales;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+public class distritos extends AppCompatActivity {
+
+    Button bt_go_to_lt3, bt_go_to_lt4, bt_go_to_lt12;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_distritos);
+        initViews();
+
+
+
+        bt_go_to_lt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(distritos.this,Listado3.class);
+                startActivity(i);
+
+            }
+        });
+
+        bt_go_to_lt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(distritos.this,Lista4.class);
+                startActivity(i);
+
+            }
+        });
+
+        bt_go_to_lt12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(distritos.this,Lista12.class);
+                startActivity(i);
+
+            }
+        });
+
+
+
+    }
+
+    private void initViews() {
+        bt_go_to_lt3 = (Button) findViewById(R.id.btdis3);
+        bt_go_to_lt4 = (Button) findViewById(R.id.btdis4);
+        bt_go_to_lt12 = (Button) findViewById(R.id.btdis12);
+    }
+    }
+
