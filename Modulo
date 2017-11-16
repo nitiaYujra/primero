@@ -1,0 +1,51 @@
+package com.example.yujra.modulospoliciales;
+
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+public class Modulo extends AppCompatActivity {
+
+    private String Nombre;
+    private String Direccion;
+    private String telefono;
+
+    public Modulo(String nombre, String direccion, String telefono) {
+        Nombre = nombre;
+        Direccion = direccion;
+        this.telefono = telefono;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+
+
+}
