@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/poli2"
+    android:orientation="vertical"
+    tools:context="com.example.yujra.modulospoliciales.MainActivity">
+
+
+    <Button
+        android:id="@+id/btmostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Mostrar modulos" />
+
+
+    <Button
+        android:id="@+id/btinfor"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="llamarTelefono"
+        android:text="LLAMAR 110"
+
+     />
+
+</LinearLayout>
